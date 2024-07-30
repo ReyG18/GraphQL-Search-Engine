@@ -1,10 +1,13 @@
 const express = require('express');
-const path = require('path');
-const db = require('./config/connection');
 const { ApolloServer } = require('@apollo/server');
 const { expressMiddleware } = require('@apollo/server/express4');
-const { typeDefs, resolvers } = require('./schemas');
-const { authMiddleware } = require('./utils/auth')
+const path = require('path');
+const { authMiddleware } = require('./utils/auth');
+
+
+const db = require('./config/connection');
+const { typeDefs } = require('./schemas/typeDefs');
+const { resolvers } = require('./schemas/resolvers');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -27,14 +30,14 @@ const startApolloServer = async () => {
   if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '../client/dist')));
 
-    app.get('*'), (req, res) => {
-      res.sendFile(path.join(_dirname, '../client/dist/index.html'))
-    }
+    app.get('*', (req, res) => {
+      res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+    });
   }
 
   db.once('open', () => {
     app.listen(PORT, () => {
-      console.log(`🌍 Now listening on localhost:${PORT}`);
+      console.log(`🌍 Now listening at https://localhost:${PORT}`);
     });
   });
 };
