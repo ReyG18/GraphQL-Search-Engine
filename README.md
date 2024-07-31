@@ -17,15 +17,13 @@ This project is a refactor of a book search engine, originally built with a REST
 ## Installation
 
 1. Clone this repository to your local machine.
-2. Navigate to the root directory in your terminal.
-3. Install the necessary dependencies by running `npm install`.
+2. Set up your .env with the necessary environmental variables. Example: `MONGODB_URI=mongodb+srv://username:password@cluster0.mongodb.net/myDatabase?retryWrites=true&w=majority`
+3. Replace username, password, and myDatabase with your actual MongoDB Atlas credentials and database name.
+4. Navigate to the root directory in your terminal and use `cd client && npm run build && cd .. && npm install`
 
 ## Usage
 
-1. Open your preferred code editor and navigate to the project directory.
-2. In the terminal, navigate to the server directory.
-3. Run `npm run develop` in the terminal to start both the client and server.
-4. Open your browser and go to http://localhost:3000 to start exploring.
+Sign up for an account and log in. You will be able to search for any book and add it to your list. Navigate to your list to view and/or remove any book you no longer wish to have on your list.
 
 ## Features
 
