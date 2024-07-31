@@ -44,7 +44,7 @@ Sign up for an account and log in. You will be able to search for any book and a
 
 ## Issues
 
-This is a known bug and will be fixed soon.
+This is a known issue and will be fixed soon.
 ![alt text](client/public/bug.png)
 
 
