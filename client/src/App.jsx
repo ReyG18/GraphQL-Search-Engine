@@ -13,7 +13,7 @@ import Navbar from './components/Navbar';
 
 const httpLink = createHttpLink({
   uri: process.env.NODE_ENV === 'production'
-  ? 'https://graphql-search-engine.onrender.com/graphql' // Replace with your actual production URL
+  ? 'https://graphql-search-engine.onrender.com/graphql'
   : 'http://localhost:3001/graphql',
 });
 
